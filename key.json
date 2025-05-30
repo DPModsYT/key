@@ -7,6 +7,13 @@
     "allowOffline": true
   },
   {
+    "id": "c24840ae1c44a9d7",
+    "username": "dprizzy",
+    "password": "qwerty",
+    "expiresAt": "2026-12-31",
+    "allowOffline": true
+  },
+  {
     "id": "android_device_id_2",
     "username": "user2",
     "password": "pass2",
