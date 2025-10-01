@@ -1,23 +1,9 @@
-[
-  {
-    "id": "6d95faf7c7e60bea",
-    "username": "dpmods",
-    "password": "dpmods",
-    "expiresAt": "2025-12-31",
-    "allowOffline": true
-  },
-  {
-    "id": "ebf0865ad377f1f4",
-    "username": "dprizzy",
-    "password": "qwerty",
-    "expiresAt": "2026-12-31",
-    "allowOffline": true
-  },
-  {
-    "id": "android_device_id_2",
-    "username": "user2",
-    "password": "pass2",
-    "expiresAt": "2025-11-30",
-    "allowOffline": false
-  }
-]
+{
+  "showDialog": true,
+  "latestVersionCode": 2,
+  "latestVersionName": "1.1",
+  "title": "UPDATE AVAILABLE",
+  "message": "Get the newest features and improvements.",
+  "UpdateButtonText": "DOWNLOAD",
+  "UpdateButtonUrl": "https://t.me/dpmodsdiscussion"
+}
