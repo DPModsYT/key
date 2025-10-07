@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DPMods JSON Editor</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #58a6ff;
+    }
+    table {
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 900px;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #30363d;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #161b22;
+    }
+    tr:nth-child(even) {
+      background-color: #161b22;
+    }
+    input {
+      background: #0d1117;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+    button {
+      background: #238636;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    button.delete {
+      background: #da3633;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    .add-section {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔑 DPMods JSON Editor</h1>
+  <table id="deviceTable">
+    <thead>
+      <tr>
+        <th>Device ID</th>
+        <th>Password</th>
+        <th>Expire Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="add-section">
+    <h3>Add New Device</h3>
+    <input type="text" id="device_id" placeholder="Device ID">
+    <input type="text" id="password" placeholder="Password">
+    <input type="date" id="expire_date">
+    <button onclick="addDevice()">Add Device</button>
+  </div>
+
+  <br>
+  <button onclick="saveJSON()">💾 Save Changes</button>
+
+  <script>
+    let jsonData = {};
+
+    async function loadJSON() {
+      const res = await fetch('key.json');
+      jsonData = await res.json();
+      renderTable();
+    }
+
+    function renderTable() {
+      const tbody = document.querySelector("#deviceTable tbody");
+      tbody.innerHTML = "";
+      jsonData.device_section.forEach((device, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><input value="${device.device_id}" onchange="updateField(${index}, 'device_id', this.value)"></td>
+          <td><input value="${device.password}" onchange="updateField(${index}, 'password', this.value)"></td>
+          <td><input type="date" value="${device.expire_date}" onchange="updateField(${index}, 'expire_date', this.value)"></td>
+          <td><button class="delete" onclick="deleteDevice(${index})">Delete</button></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function updateField(index, key, value) {
+      jsonData.device_section[index][key] = value;
+    }
+
+    function addDevice() {
+      const device_id = document.getElementById("device_id").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const expire_date = document.getElementById("expire_date").value;
+      if (!device_id || !password || !expire_date) {
+        alert("Please fill all fields!");
+        return;
+      }
+      jsonData.device_section.push({ device_id, password, expire_date });
+      renderTable();
+    }
+
+    function deleteDevice(index) {
+      if (confirm("Are you sure you want to delete this entry?")) {
+        jsonData.device_section.splice(index, 1);
+        renderTable();
+      }
+    }
+
+    function saveJSON() {
+      const dataStr = JSON.stringify(jsonData, null, 2);
+      const blob = new Blob([dataStr], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "key.json";
+      a.click();
+      URL.revokeObjectURL(url);
+      alert("Download complete! Replace this file in your repo to update.");
+    }
+
+    loadJSON();
+  </script>
+</body>
+</html>
