@@ -6,18 +6,22 @@
   },
   "credentials": [
     {
-      "username": "user123",
-      "password": "password123",
-      "build_id": "V1.0.0",
-      "expire_date": "2025-12-31",
-      "device_limit": 1
+      "username": "admin",
+      "password": "supersecurepassword",
+      "build_id": "1939djjfk_key",  
+      "expire_date": "2026-03-01",
+      "authorized_device_ids": [     
+        "88e99b0c741499cc",          // Device ID 1 (Must match the ID shown in the dialog)
+        "4b85f2a10d9e8c44",          // Device ID 2
+        "UNKNOWN"                    // Optional: Used if your app fails to retrieve a stable ID
+      ]
     },
     {
-      "username": "tester",
-      "password": "testpass",
-      "build_id": "V1.0.1",
-      "expire_date": "2026-06-15",
-      "device_limit": 3
+      "username": "client_key_1",
+      "password": "client_pass",
+      "build_id": "f5a6b7c8d9e0f1g2", 
+      "expire_date": "2025-11-20",
+      "authorized_device_ids": ["c4f3d2b1a0e9f8g7"] 
     }
   ]
 }
