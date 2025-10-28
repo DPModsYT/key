@@ -11,9 +11,9 @@
       "build_id": "1939djjfk_key",  
       "expire_date": "2026-03-01",
       "authorized_device_ids": [     
-        "88e99b0c741499cc",          // Device ID 1 (Must match the ID shown in the dialog)
-        "4b85f2a10d9e8c44",          // Device ID 2
-        "UNKNOWN"                    // Optional: Used if your app fails to retrieve a stable ID
+        "88e99b0c741499cc",         
+        "4b85f2a10d9e8c44",         
+        "UNKNOWN"                    
       ]
     },
     {
