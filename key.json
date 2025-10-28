@@ -7,12 +7,13 @@
   "credentials": [
     {
       "username": "admin",
-      "password": "supersecurepassword",
-      "build_id": "1939djjfk_key",  
+      "password": "admin",
+      "build_id": "1.0",  
       "expire_date": "2026-03-01",
       "authorized_device_ids": [     
         "88e99b0c741499cc",         
-        "4b85f2a10d9e8c44",         
+        "4b85f2a10d9e8c44",   
+        "3ba4a93f018dc799",   
         "UNKNOWN"                    
       ]
     },
