@@ -11,11 +11,11 @@
   "topIconAsset": "logo.png",
   "topIconSpin": true,
   
-  "animateGradient": true,        // ✅ Set to true for the new animation
-  "animateRainbowStroke": false,   // ✅ Set to false to remove the stroke
+  "animateGradient": true,        
+  "animateRainbowStroke": false,   
 
-  "gradientStartColor": "#FF6B6B", // These will be the initial colors for the animation if you have animateGradient=true
-  "gradientEndColor": "#4ECDC4",   // But the animation will transition through other colors defined in Java
+  "gradientStartColor": "#FF6B6B", 
+  "gradientEndColor": "#4ECDC4",   
   "buttonGradientStartColor": "#FFDAB9",
   "buttonGradientEndColor": "#E6E6FA",
   "buttonTextColor": "#333333"
