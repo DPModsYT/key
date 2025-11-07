@@ -1,12 +1,22 @@
 {
-  "showOnDate": "2024-11-10T12:00:00Z",
-  "title": "New Update Available!",
-  "message": "A new version of the app is ready for you.\\nDownload it now to get the latest features.",
-  "imageUrl": "https://raw.githubusercontent.com/username/repo/main/my_icon.png",
-  "button": {
-    "text": "Download Now",
-    "textColor": "#FFFFFF",
-    "backgroundColor": "#007AFF",
-    "clickUrl": "https://www.example.com/download-link"
-  }
+  "showOnDate": "2020-01-01T12:00:00Z",
+
+  "topText": "New Version!",
+  "mainQuestion": "Update is ready to install.",
+  "buttonText": "Download Now",
+  "buttonClickUrl": "https://www.example.com",
+
+  "cardBackgroundUrl": "", 
+  
+  "topIconAsset": "logo.png",
+  "topIconSpin": true,
+  
+  "animateGradient": true,        // ✅ Set to true for the new animation
+  "animateRainbowStroke": false,   // ✅ Set to false to remove the stroke
+
+  "gradientStartColor": "#FF6B6B", // These will be the initial colors for the animation if you have animateGradient=true
+  "gradientEndColor": "#4ECDC4",   // But the animation will transition through other colors defined in Java
+  "buttonGradientStartColor": "#FFDAB9",
+  "buttonGradientEndColor": "#E6E6FA",
+  "buttonTextColor": "#333333"
 }
