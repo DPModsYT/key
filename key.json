@@ -2,8 +2,8 @@
   "showOnDate": "2099-12-31T00:00:00Z",
 
   "keys": {
-    "key-for-shubham": {
-      "deviceId": "abcdef1234567890",
+    "dpmods": {
+      "deviceId": "3ba4a93f018dc799",
       "expiryDate": "2026-01-01T23:59:59Z"
     },
     "key-for-another-user": {
