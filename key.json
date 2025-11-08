@@ -30,7 +30,7 @@
   "login_dialog": {
     "topText": "Access Required",
     "buttonText": "Login",
-    "adminButtonText": "Admin",
+    "adminButtonText": "Contact Admin",
     "adminButtonUrl": "https://t.me/YourTelegramLink"
   },
 
@@ -40,6 +40,6 @@
     "animateGradient": true,
     "buttonGradientStartColor": "#FFDAB9",
     "buttonGradientEndColor": "#E6E6FA",
-    "buttonTextColor": "#8A2BE2"
+    "buttonTextColor": "#333333"
   }
 }
